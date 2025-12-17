@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #020617, #000);
+  color: #e5e7eb;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin: 20px 0;
+  color: #38bdf8;
+  text-shadow: 0 0 12px #38bdf8;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  background: rgba(2, 6, 23, 0.8);
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(56,189,248,0.3);
+}
+
+.stats b {
+  color: #22d3ee;
+}
+
+select {
+  padding: 8px 14px;
+  background: #020617;
+  color: #38bdf8;
+  border: 1px solid #38bdf8;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+#gameArea {
+  width: 600px;
+  height: 400px;
+  margin: 15px auto;
+  background: #020617;
+  border: 2px solid #38bdf8;
+  border-radius: 16px;
+  position: relative;
+  cursor: crosshair;
+  box-shadow:
+    0 0 25px rgba(56,189,248,0.4),
+    inset 0 0 20px rgba(56,189,248,0.1);
+}
+
+.target {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fb7185, #ef4444);
+  box-shadow: 0 0 15px #ef4444;
+}
+
+button {
+  margin-bottom: 20px;
+  padding: 12px 40px;
+  font-size: 16px;
+  font-family: inherit;
+  color: #020617;
+  background: linear-gradient(90deg, #38bdf8, #22d3ee);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(56,189,248,0.6);
+}
+
+button:hover {
+  transform: scale(1.05);
+}
