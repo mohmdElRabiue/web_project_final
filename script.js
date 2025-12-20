@@ -203,3 +203,25 @@ const dietPlans = {
         ]
     }
 };
+
+function showHome() {
+    hideAllPages();
+    document.getElementById('homePage').classList.add('active');
+}
+
+function showWorkouts() {
+    hideAllPages();
+    const page = document.getElementById('workoutsPage');
+    page.classList.add('active');
+
+    const list = document.getElementById('workoutsList');
+    list.innerHTML = '';
+    list.style.display = 'grid';
+
+    document.getElementById('workoutDetail').classList.remove('active');
+
+    for (let key in workoutPrograms) {
+        const card = createWorkoutCard(key, workoutPrograms[key].name);
+        list.appendChild(card);
+    }
+}
