@@ -293,3 +293,61 @@ function createDietCard(id, name) {
 
     return card;
 }
+
+
+function showWorkoutDetail(id) {
+    const workout = workoutPrograms[id];
+    const list = document.getElementById('workoutsList');
+    const detail = document.getElementById('workoutDetail');
+
+    list.style.display = 'none';
+    detail.classList.add('active');
+
+    let exercisesHTML = '';
+    workout.exercises.forEach(exercise => {
+        exercisesHTML += `<div class="exercise-item">${exercise}</div>`;
+    });
+
+    detail.innerHTML = `
+        <button class="back-btn" onclick="showWorkouts()">← رجوع للبرامج</button>
+        <div class="detail-card">
+            <h2 class="detail-title">${workout.name}</h2>
+            ${workout.info ? `<p class="detail-info">${workout.info}</p>` : ''}
+            <div class="exercise-list">
+                ${exercisesHTML}
+            </div>
+        </div>
+    `;
+}
+
+// عرض تفاصيل النظام الغذائي
+function showDietDetail(id) {
+    const diet = dietPlans[id];
+    const list = document.getElementById('dietList');
+    const detail = document.getElementById('dietDetail');
+
+    list.style.display = 'none';
+    detail.classList.add('active');
+
+    let mealsHTML = '';
+    diet.meals.forEach(meal => {
+        mealsHTML += `<div class="meal-item">${meal}</div>`;
+    });
+
+    detail.innerHTML = `
+        <button class="back-btn" onclick="showDiet()">← رجوع للأنظمة</button>
+        <div class="detail-card">
+            <h2 class="detail-title" style="color: #22c55e;">${diet.name}</h2>
+            <p class="detail-info">السعرات: ${diet.calories}</p>
+            ${diet.info ? `<p class="detail-info">${diet.info}</p>` : ''}
+            <div class="meal-list">
+                ${mealsHTML}
+            </div>
+        </div>
+    `;
+}
+
+// تهيئة الموقع عند التحميل
+document.addEventListener('DOMContentLoaded', function () {
+    showHome();
+});
