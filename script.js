@@ -271,3 +271,25 @@ function createWorkoutCard(id, name) {
     return card;
 }
 
+function createDietCard(id, name) {
+    const card = document.createElement('div');
+    card.className = 'card diet-card-item';
+    card.onclick = () => showDietDetail(id);
+
+    card.innerHTML = `
+        <div class="card-header">
+            <div class="card-title">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="8" r="6"/>
+                    <path d="M12 14c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/>
+                </svg>
+                <h3>${name}</h3>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"/>
+            </svg>
+        </div>
+    `;
+
+    return card;
+}
