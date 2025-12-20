@@ -243,4 +243,31 @@ function showDiet() {
     }
 }
 
+function hideAllPages() {
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => page.classList.remove('active'));
+}
+
+
+function createWorkoutCard(id, name) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.onclick = () => showWorkoutDetail(id);
+
+    card.innerHTML = `
+        <div class="card-header">
+            <div class="card-title">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6.5 6.5l11 11M6.5 17.5l11-11M3 12h3M18 12h3M12 3v3M12 18v3"/>
+                </svg>
+                <h3>${name}</h3>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"/>
+            </svg>
+        </div>
+    `;
+
+    return card;
+}
 
