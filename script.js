@@ -320,7 +320,7 @@ function showWorkoutDetail(id) {
     `;
 }
 
-// عرض تفاصيل النظام الغذائي
+
 function showDietDetail(id) {
     const diet = dietPlans[id];
     const list = document.getElementById('dietList');
@@ -347,7 +347,7 @@ function showDietDetail(id) {
     `;
 }
 
-// تهيئة الموقع عند التحميل
 document.addEventListener('DOMContentLoaded', function () {
     showHome();
+
 });
