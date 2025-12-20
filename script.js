@@ -225,3 +225,22 @@ function showWorkouts() {
         list.appendChild(card);
     }
 }
+
+function showDiet() {
+    hideAllPages();
+    const page = document.getElementById('dietPage');
+    page.classList.add('active');
+
+    const list = document.getElementById('dietList');
+    list.innerHTML = '';
+    list.style.display = 'grid';
+
+    document.getElementById('dietDetail').classList.remove('active');
+
+    for (let key in dietPlans) {
+        const card = createDietCard(key, dietPlans[key].name);
+        list.appendChild(card);
+    }
+}
+
+
